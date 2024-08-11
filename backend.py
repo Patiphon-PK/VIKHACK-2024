@@ -8,8 +8,12 @@ load_dotenv()
 class Bot:
     def __init__(self):
         self.api_key = os.getenv("OPENAI_API_KEY")
-        self.system_prompt = "return the name, time, location into json"
-        self.prompt = "return the name, time, location into json"
+        self.system_prompt = """
+        Your role is to return the name, time, location and parse that to json. You should
+        - Parse the time so it matches ISO datetime format
+
+        """
+        self.prompt = "Here is the image"
 
     def encode_image(self, image_path):
         with open(image_path, "rb") as image_file:
@@ -23,7 +27,7 @@ class Bot:
         }
 
         payload = {
-        "model": "gpt-4o-mini",
+        "model": "gpt-4o-2024-08-06",
         "messages": [
             {
                 "role": "system",

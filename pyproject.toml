@@ -11,6 +11,8 @@ requests = "^2.32.3"
 openai = "^1.40.3"
 fastapi = {extras = ["standard"], version = "^0.112.0"}
 uvicorn = "^0.30.5"
+ics = "^0.7.2"
+pytz = "^2024.1"
 
 
 [build-system]

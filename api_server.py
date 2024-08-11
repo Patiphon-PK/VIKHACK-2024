@@ -7,7 +7,6 @@ import json
 from datetime import datetime
 import base64
 
-
 from backend import Bot
 from utils import json_to_ics
 
