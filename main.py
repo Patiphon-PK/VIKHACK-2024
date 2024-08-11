@@ -7,11 +7,11 @@ from datetime import datetime
 
 if __name__ == "__main__":
     bot = Bot()
-    bot_response = bot.ping_ai("return the name, time, location into json", "img.png")
+    bot_response = bot.ping_ai("img.png")
     date_json = bot_response["choices"][0]["message"]["content"]
 
     formatted_date = json.dumps(json.loads(date_json), indent=4, sort_keys=True)
-    print(json_to_ics(formatted_date))
+    json_to_ics(formatted_date)
 
 
 

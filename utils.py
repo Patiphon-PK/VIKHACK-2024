@@ -43,7 +43,7 @@ def json_to_ics(json_string, ics_filename='events.ics'):
 
     ics_content += "END:VCALENDAR"
 
-    with open(ics_filename, 'w') as file:
-        file.write(ics_content)
+    # with open(ics_filename, 'w') as file:
+    #     file.write(ics_content)
+    return ics_content
 
-    print(f"ICS file '{ics_filename}' has been created.")
