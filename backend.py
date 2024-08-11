@@ -29,7 +29,7 @@ class Bot:
             "content": [
                 {
                 "type": "text",
-                "text": f"prompt"
+                "text": f"{prompt}"
                 },
                 {
                 "type": "image_url",
@@ -40,7 +40,40 @@ class Bot:
             ]
             }
         ],
-        
+        "response_format": {
+            "type": "json_schema",
+            "json_schema": {
+            "name": "events_response",
+            "strict": True,
+            "schema": {
+                "type": "object",
+                "properties": {
+                "events": {
+                    "type": "array",
+                    "items": {
+                    "type": "object",
+                    "properties": {
+                        "name": {
+                            "type": "string"
+                        },
+                        "time": {
+                            "type": "string"
+                        },
+                        "location": {
+                            "type": "string"
+                        },
+                        
+                    },
+                    "required": ["name", "time", "location"],
+                    "additionalProperties": False
+                    }
+                }
+                },
+                "required": ["events"],
+                "additionalProperties": False
+            }
+            }
+        },
         "max_tokens": 300
         }
 
